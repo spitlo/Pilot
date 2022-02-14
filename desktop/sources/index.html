@@ -12,10 +12,10 @@
       import Pilot from "js:./sources/scripts/pilot.js"
       import Controller from "js:./sources/scripts/lib/controller.js"
 
-      const webFrame = require('electron').webFrame
-      const {dialog,app} = require('electron').remote;
-      const pilot = new Pilot()
-      const controller = new Controller()
+      const webFrame = require('electron').webFrame;
+      const { dialog, app } = require('@electron/remote');
+      const pilot = new Pilot();
+      const controller = new Controller();
 
       controller.add("default","*","About",() => { require('electron').shell.openExternal('https://github.com/hundredrabbits/Pilot') },"CmdOrCtrl+,")
       controller.add("default","*","Fullscreen",() => { app.toggleFullscreen() },"CmdOrCtrl+Enter")

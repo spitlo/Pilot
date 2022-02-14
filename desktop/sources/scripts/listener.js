@@ -1,4 +1,4 @@
-const dgram = require('dgram')
+const dgram = require('dgram');
 
 export default function Listener (pilot) {
   this.server = dgram.createSocket('udp4')

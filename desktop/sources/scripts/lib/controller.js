@@ -1,14 +1,11 @@
 export default function Controller () {
-  const fs = require('fs')
-  const { dialog, app } = require('electron').remote
+  const fs = require('fs');
+  const { app } = require('@electron/remote');
 
   this.menu = { default: {} }
-  this.mode = 'default'
-
-  this.app = require('electron').remote.app
-
-  this.start = function () {
-  }
+  this.mode = 'default';
+  this.app = app;
+  this.start = function () {}
 
   this.add = function (mode, cat, label, fn, accelerator) {
     if (!this.menu[mode]) { this.menu[mode] = {} }
