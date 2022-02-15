@@ -1,10 +1,12 @@
 # Pilot
 
-[Pilot](http://wiki.xxiivv.com/Pilot) is a **UDP synthesizer** designed to be controlled externally. It was created as a companion application to the livecoding environment [ORCA](https://hundredrabbits.itch.io/orca). 
+[Pilot](http://wiki.xxiivv.com/Pilot) is a **UDP synthesizer** designed to be controlled externally. It was created as a companion application to the livecoding environment [ORCA](https://hundredrabbits.itch.io/orca).
 
 ## Install & Run
 
 You can download [builds](https://hundredrabbits.itch.io/pilot) for **OSX, Windows and Linux**, or if you wish to build it yourself, follow these steps:
+
+### Desktop
 
 ```
 git clone https://github.com/hundredrabbits/Pilot.git
@@ -12,6 +14,9 @@ cd Pilot/desktop/
 npm install
 npm start
 ```
+### Browser
+
+Ensure that you have run `npm install` in the `desktop` directory. Then, serve `browser/index.html`. For local development, it is easiest to run `npx http-server` from the root directory, and then navigate to http://localhost:8080/browser/.
 
 <img src='https://raw.githubusercontent.com/hundredrabbits/Pilot/master/resources/preview.jpg' width="600"/>
 
