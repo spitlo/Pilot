@@ -6,6 +6,7 @@ window.require = function(what) {
 	switch (what) {
 		case "dgram": return dgram; break;
 		case "electron": return electron; break;
+        case "@electron/remote": return electron; break;
 		case "tone": return Tone; break;
 		case "fs": return fs; break;
 
