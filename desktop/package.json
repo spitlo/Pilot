@@ -7,6 +7,7 @@
     "time": "node time.js",
     "docs": "node ../docs.js",
     "fix": "standard --fix",
+    "lint": "prettier --write sources/**/*.{js,css,html}",
     "clean": "rm -r dist; echo 'cleaned build location'",
     "build_osx": "electron-builder --mac; echo 'Built for OSX'",
     "build_linux": "electron-builder --linux; echo 'Built for LINUX'",
@@ -20,7 +21,8 @@
   },
   "devDependencies": {
     "electron": "^17.0.0",
-    "electron-builder": "^22.10.4"
+    "electron-builder": "^22.10.4",
+    "prettier": "^2.5.1"
   },
   "dependencies": {
     "@electron/remote": "^2.0.0",
