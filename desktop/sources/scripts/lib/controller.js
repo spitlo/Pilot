@@ -1,5 +1,4 @@
 export default function Controller() {
-    const fs = require("fs");
     const { app } = require("@electron/remote");
 
     this.menu = { default: {} };

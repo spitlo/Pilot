@@ -4,20 +4,12 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "time": "node time.js",
-    "docs": "node ../docs.js",
-    "fix": "standard --fix",
-    "lint": "prettier --write sources/**/*.{js,css,html}",
+    "lint": "prettier --write sources/**/*.{js,css,html} main.js",
     "clean": "rm -r dist; echo 'cleaned build location'",
     "build_osx": "electron-builder --mac; echo 'Built for OSX'",
     "build_linux": "electron-builder --linux; echo 'Built for LINUX'",
     "build_win": "electron-builder --win; echo 'Built for WIN'",
-    "build": "npm run clean ; npm run build_osx ; npm run build_linux ; npm run build_win",
-    "push_osx": "~/butler push ~/Desktop/Pilot-darwin-x64/ hundredrabbits/pilot:osx-64",
-    "push_linux": "~/butler push ~/Desktop/Pilot-linux-x64/ hundredrabbits/pilot:linux-64",
-    "push_win": "~/butler push ~/Desktop/Pilot-win32-x64/ hundredrabbits/pilot:windows-64",
-    "push_status": "~/butler status hundredrabbits/pilot",
-    "push": "npm run build ; npm run push_osx ; npm run push_linux ; npm run push_win ; npm run clean ; npm run push_status"
+    "build": "npm run clean ; npm run build_osx ; npm run build_linux ; npm run build_win"
   },
   "devDependencies": {
     "electron": "^17.0.0",
