@@ -1,4 +1,5 @@
 import ChannelInterface from "./interface.channel.js";
+import DrumInterface from './interface.drum.js'
 import EffectInterface from "./interface.effect.js";
 
 const Tone = require("tone");
@@ -156,6 +157,10 @@ export default function Mixer(pilot) {
                 oscillator: { type: "square" },
             })
         );
+
+
+        // Drum channel
+        this.channels[16] = new DrumInterface(pilot, 16, 0)
 
         // I
         this.effects.bitcrusher = new EffectInterface(
@@ -321,12 +326,16 @@ export default function Mixer(pilot) {
         // Special
         if (msg && `${msg}`.substr(0, 4).toLowerCase() === "renv") {
             for (const id in this.channels) {
-                this.channels[id].randEnv();
+                if (typeof this.channels[id].randEnv === 'function') {
+                    this.channels[id].randEnv();
+                }
             }
         }
         if (msg && `${msg}`.substr(0, 4).toLowerCase() === "rosc") {
             for (const id in this.channels) {
-                this.channels[id].randOsc();
+                if (typeof this.channels[id].randOsc === 'function') {
+                    this.channels[id].randOsc();
+                }
             }
         }
         if (msg && `${msg}`.substr(0, 4).toLowerCase() === "refx") {
@@ -351,13 +360,15 @@ export default function Mixer(pilot) {
     this.reset = function () {
         // Return to Env Presets
         for (const id in this.channels) {
-            this.channels[id].setEnv({
-                isEnv: true,
-                attack: 0.001,
-                decay: clamp((8 - (id % 8)) / 8, 0.01, 0.9),
-                sustain: clamp((id % 4) / 4, 0.01, 0.9),
-                release: clamp((id % 6) / 6, 0.01, 0.9),
-            });
+            if (typeof this.channels[id].setEnv === 'function') {
+                this.channels[id].setEnv({
+                    isEnv: true,
+                    attack: 0.001,
+                    decay: clamp((8 - (id % 8)) / 8, 0.01, 0.9),
+                    sustain: clamp((id % 4) / 4, 0.01, 0.9),
+                    release: clamp((id % 6) / 6, 0.01, 0.9),
+                });
+            }
         }
         // Return to Osc Presets
         this.run(

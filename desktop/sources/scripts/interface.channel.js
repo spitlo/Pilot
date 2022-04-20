@@ -240,7 +240,7 @@ export default function ChannelInterface(pilot, id, node) {
         const velocity = msg.length >= 3 ? from16(msg.substr(2, 1)) : 0.66;
         const length = msg.length === 4 ? from16(msg.substr(3, 1)) : 0.1;
         const transposed = transpose(note, octave);
-        console.log(transposed);
+
         return {
             isNote: true,
             octave: transposed.octave,

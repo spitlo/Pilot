@@ -33,8 +33,8 @@ app.on("ready", () => {
     remoteMain.initialize();
 
     app.win = new BrowserWindow({
-        width: 445,
-        height: 210,
+        width: 1445,
+        height: 810,
         minWidth: 200,
         minHeight: 190,
         backgroundColor: "#000",
@@ -65,7 +65,7 @@ app.on("ready", () => {
     remoteMain.enable(app.win.webContents);
 
     app.win.loadURL(`file://${__dirname}/sources/index.html`);
-    // app.inspect()
+    app.inspect()
 
     app.win.on("closed", () => {
         win = null;
