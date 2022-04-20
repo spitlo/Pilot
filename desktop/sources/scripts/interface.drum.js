@@ -102,13 +102,12 @@ export default function DrumInterface(pilot, id, kit) {
     if (isNaN(data.octave)) {
       return
     }
+
     if (OCTAVE.indexOf(data.note) < 0) {
       console.warn(`Unknown Note`)
       return
     }
-    if (this.lastNote && performance.now() - this.lastNote < 100) {
-      return
-    }
+
     const name = `${data.note}${data.sharp}${data.octave}`
     const length = clamp(data.length, 0.1, 0.9)
     this.node.triggerAttackRelease(name, length, '+0', data.velocity)
