@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "lint": "prettier --write sources/**/*.{js,css,html} main.js",
-    "clean": "rm -r dist; echo 'cleaned build location'",
-    "build_osx": "electron-builder --mac; echo 'Built for OSX'",
-    "build_linux": "electron-builder --linux; echo 'Built for LINUX'",
-    "build_win": "electron-builder --win; echo 'Built for WIN'",
-    "build": "npm run clean ; npm run build_osx ; npm run build_linux ; npm run build_win"
+    "build": "yarn clean; yarn build_osx; yarn build_linux; yarn build_win",
+    "build_linux": "electron-builder --linux && echo 'Built for LINUX'",
+    "build_osx": "electron-builder --mac && echo 'Built for OSX'",
+    "build_win": "electron-builder --win && echo 'Built for WIN'",
+    "clean": "rm -r dist; echo 'Cleaned build location'",
+    "lint": "prettier --write 'sources/**/*.{js,css,html}' main.js",
+    "start": "electron ."
   },
   "devDependencies": {
     "electron": "^17.0.0",

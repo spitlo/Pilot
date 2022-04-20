@@ -24,7 +24,6 @@ const KITNAMES = [
 ]
 
 const createKit = function (kit) {
-  console.log('CREATING KIT!!!!!', kit); /* eslint-disable-line */
   const kitName = KITNAMES[kit || 0]
   return [
     {
@@ -56,7 +55,6 @@ const createKit = function (kit) {
 }
 
 export default function DrumInterface(pilot, id, kit) {
-  console.log('Creating init kit'); /* eslint-disable-line */
   const [samples, settings] = createKit(kit)
   const node = new Tone.Sampler(samples, settings)
   Interface.call(this, pilot, id, node, true)
@@ -118,16 +116,13 @@ export default function DrumInterface(pilot, id, kit) {
   }
 
   this.setKit = function (data) {
-    console.log(`Setting kit to ${data.kit}`, data); /* eslint-disable-line */
     this.kit = data.kit
     const [samples, settings] = createKit(data.kit)
-    console.log({ samples, settings }); /* eslint-disable-line */
     this.node = new Tone.Sampler(samples, settings).toMaster()
     this.updateKit()
   }
 
   this.updateKit = function (data, force) {
-    console.log({ data }) /* eslint-disable-line */
     setContent(this.kit_el, `${KITNAMES[this.kit]}`)
   }
 
@@ -165,8 +160,8 @@ export default function DrumInterface(pilot, id, kit) {
     }
 
     return {
-        isKit: true,
-        kit: val,
+      isKit: true,
+      kit: val,
     }
   }
 
