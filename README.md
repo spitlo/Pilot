@@ -62,7 +62,14 @@ The Effects are applied to all channels. The effect command format is a 3 charac
 
 `TODO` Add the ability to change the mastering effects like compressor and volume. Coming soon!
 
-#### Drum Machine
+#### Special
+
+- `bpm140`, sets the BPM to `140`. This command is designed to apply to effects like feedback.
+- `renv`, randomizes envelopes.
+- `rosc`, randomizes oscillators.
+- `refx`, randomizes effects.
+
+## Drum Machine
 
 This fork includes a very simple drum machine, with samples taken from [Enfer](https://github.com/neauoire/Enfer) at the moment. My plan is to replace them with custom kits in the future.
 
@@ -92,7 +99,7 @@ The drum machine is on channel 16 (`g`). The samples are mapped like this:
 
 Where possible, they are mapped to a the same note as a similar GM drum. But the most important thing is that all drum kits have the same samples in the same places, so if you jump between kits, you should get a somewhat consistent sound -- if you want to use the same drum pattern but different sounds in a part B for example.
 
-##### Choosing kit
+###  Choosing a kit
 
 To switch between kits, send the special message `KIT` to the drum channel. For example, to choose the default drum kit, send `KIT0`, like this:
 
@@ -100,7 +107,7 @@ To switch between kits, send the special message `KIT` to the drum channel. For 
 ;gKIT0
 ```
 
-###### Available kits
+### Available kits
 
 For now, these kits are taken from [Enfer](https://github.com/neauoire/Enfer). In the future, the kits will change but the mapping will stay the same as far as possible, or follow the GM standard mapping.
 
@@ -119,13 +126,6 @@ For now, these kits are taken from [Enfer](https://github.com/neauoire/Enfer). I
 | a  | vermona    | Funk Bass (Aelita)
 | b  | commodore  | Troika Pulse (Altair 231)
 | c  | dmg        | Comecon (Altair 231)
-
-#### Special
-
-- `bpm140`, sets the BPM to `140`. This command is designed to apply to effects like feedback.
-- `renv`, randomizes envelopes.
-- `rosc`, randomizes oscillators.
-- `refx`, randomizes effects.
 
 ## Record
 
