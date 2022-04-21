@@ -2,6 +2,7 @@ import Listener from './listener.js'
 import Mixer from './mixer.js'
 import Recorder from './recorder.js'
 import Commander from './commander.js'
+import Legend from './legend.js'
 import Theme from './lib/theme.js'
 
 const { webFrame } = require('electron')
@@ -35,6 +36,7 @@ export default function Pilot() {
     this.listener = new Listener(this)
     this.recorder = new Recorder(this)
     this.commander = new Commander(this)
+    this.legend = new Legend(this)
 
     host.appendChild(this.el)
 
@@ -42,6 +44,7 @@ export default function Pilot() {
     this.mixer.install(this.el)
     this.recorder.install(this.el)
     this.commander.install(this.el)
+    this.legend.install(this.el)
   }
 
   this.start = function () {

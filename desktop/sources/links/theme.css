@@ -51,6 +51,14 @@ body {
   color: var(--f_high) !important;
 }
 
+#legend {
+  color: var(--f_high) !important;
+}
+
+#legend span.col0 {
+  color: var(--f_low) !important;
+}
+
 #pilot.recording #recorder {
   color: var(--b_inv) !important;
 }

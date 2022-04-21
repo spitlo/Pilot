@@ -66,6 +66,15 @@
         controller.add(
           'default',
           '*',
+          'Legend',
+          () => {
+            pilot.legend.toggleVisible()
+          },
+          'CmdOrCtrl+L'
+        )
+        controller.add(
+          'default',
+          '*',
           'Quit',
           () => {
             app.exit()

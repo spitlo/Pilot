@@ -243,6 +243,23 @@ body {
   line-height: 11px;
 }
 
+/* Legend */
+
+#legend {
+  top: calc(13 * 15px);
+  line-height: 15px;
+  color: #666;
+  position: absolute;
+  text-transform: uppercase;
+  min-width: 420px;
+  padding-top: 12px;
+  display: none;
+}
+
+#legend.visible {
+  display: block;
+}
+
 @media (max-width: 420px) {
   #pilot #mixer {
     columns: 1 !important;
@@ -425,5 +442,9 @@ body {
 
   #recorder {
     top: calc(18 * 16px);
+  }
+
+  #legend {
+    top: calc(19 * 16px);
   }
 }
