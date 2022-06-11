@@ -7,19 +7,19 @@ export default function Legend(pilot) {
 `
 <pre>
 <b>KITS:</b>
-<span class="col0">0</span> tr808
-<span class="col0">1</span> tr909
-<span class="col0">2</span> dmx
-<span class="col0">3</span> dnb
-<span class="col0">4</span> dark
-<span class="col0">5</span> deep
-<span class="col0">6</span> tech
-<span class="col0">7</span> modular
-<span class="col0">8</span> gabber
-<span class="col0">9</span> bergh
-<span class="col0">a</span> vermona
-<span class="col0">b</span> commodore
-<span class="col0">c</span> dmg
+<span class="col0">0</span> bergh
+<span class="col0">1</span> commodore
+<span class="col0">2</span> dark
+<span class="col0">3</span> deep
+<span class="col0">4</span> dmg
+<span class="col0">5</span> dmx
+<span class="col0">6</span> dnb
+<span class="col0">7</span> gabber
+<span class="col0">8</span> modular
+<span class="col0">9</span> tech
+<span class="col0">a</span> tr808
+<span class="col0">b</span> tr909
+<span class="col0">c</span> vermona
 
 <b>SOUNDS:</b>
 <span class="col0">B0&nbsp;</span> kick.wav
